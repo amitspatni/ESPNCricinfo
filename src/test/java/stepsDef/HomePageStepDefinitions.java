@@ -3,9 +3,13 @@ package stepsDef;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
+import org.xml.sax.SAXException;
 import pages.HomePage;
 import pages.LiveScorePage;
 import utils.ActionHelper;
+
+import javax.xml.parsers.ParserConfigurationException;
+import java.io.IOException;
 
 public class HomePageStepDefinitions {
 
@@ -13,11 +17,11 @@ public class HomePageStepDefinitions {
    // LiveScorePageActions liveScorePageActions = new LiveScorePageActions();
 
     @Given("User is on website")
-    public void customer_is_on_website() {
+    public void customer_is_on_website() throws Exception {
         // Write code here that turns the phrase above into concrete actions
         System.out.println("I am on this step");
-        ActionHelper.waitForElementToLoad(HomePage.btn_popUp_not_now);
-        ActionHelper.clickBtn(HomePage.btn_popUp_not_now);
+        ActionHelper.waitForElementToLoad(HomePage.btn_popUp_not_now());
+        ActionHelper.clickBtn(HomePage.btn_popUp_not_now());
 
 
     }
@@ -30,10 +34,10 @@ public class HomePageStepDefinitions {
     }
 
     @When("User clicks on Live Scores")
-    public void user_clicks_on_live_scores() {
+    public void user_clicks_on_live_scores() throws Exception {
         // Write code here that turns the phrase above into concrete actions
-        ActionHelper.waitForElementToLoad(HomePage.link_Live_Scores);
-        ActionHelper.click_on_link(HomePage.link_Live_Scores);
+        ActionHelper.waitForElementToLoad((HomePage.get_link_Live_Scores()));
+        ActionHelper.click_on_link(HomePage.get_link_Live_Scores());
         System.out.println("I am on  step 2");
     }
 

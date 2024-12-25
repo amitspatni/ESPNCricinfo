@@ -1,16 +1,15 @@
 <xpath>
  <HomePage>
-       <link_Live_Scores>//span[normalize-space()='Live Scores']</link_Live_Scores>
+       <link_Live_Scores>//a[@title='Live Cricket Score']</link_Live_Scores>
        <btn_popUp_not_now>//button[@id='wzrk-cancel']</btn_popUp_not_now>
          <btn_Yes_I_am_in>//button[@id='wzrk-confirm']</btn_Yes_I_am_in>
  </HomePage>
  <LiveScorePage>
-         <link_Live_Scores>//span[normalize-space()='Live Scores']</link_Live_Scores>
-            <btn_popUp_not_now>//button[@id='wzrk-cancel']</btn_popUp_not_now>
-                <btn_Yes_I_am_in>//button[@id='wzrk-confirm']</btn_Yes_I_am_in>
+     <link_Live_Scorest>//test[normalize-space()='Live Scores']</link_Live_Scorest>
+     <btn_popUp_not_now>//button[@id='wzrk-cancel']</btn_popUp_not_now>
+     <btn_Yes_I_am_in>//button[@id='wzrk-confirm']</btn_Yes_I_am_in>
 
  </LiveScorePage>
+
 </xpath>
-
-
 
