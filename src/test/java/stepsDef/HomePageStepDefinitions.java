@@ -1,7 +1,5 @@
 package stepsDef;
 
-import actions.HomePageActions;
-import actions.LiveScorePageActions;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
@@ -11,8 +9,8 @@ import utils.ActionHelper;
 
 public class HomePageStepDefinitions {
 
-    HomePageActions homePageActions = new HomePageActions();
-    LiveScorePageActions liveScorePageActions = new LiveScorePageActions();
+   // HomePageActions homePageActions = new HomePageActions();
+   // LiveScorePageActions liveScorePageActions = new LiveScorePageActions();
 
     @Given("User is on website")
     public void customer_is_on_website() {
