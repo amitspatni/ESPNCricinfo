@@ -3,18 +3,12 @@ package stepsDef;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
-import org.xml.sax.SAXException;
 import pages.HomePage;
 import pages.LiveScorePage;
 import utils.ActionHelper;
 
-import javax.xml.parsers.ParserConfigurationException;
-import java.io.IOException;
-
 public class HomePageStepDefinitions {
 
-   // HomePageActions homePageActions = new HomePageActions();
-   // LiveScorePageActions liveScorePageActions = new LiveScorePageActions();
 
     @Given("User is on website")
     public void customer_is_on_website() throws Exception {

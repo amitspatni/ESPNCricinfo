@@ -11,7 +11,7 @@ import javax.xml.parsers.ParserConfigurationException;
 import java.io.IOException;
 import java.lang.reflect.*;
 
-public class ReadXmlFile {
+public class Utilities {
 
     public static void main(String[] arg) throws ParserConfigurationException, IOException, SAXException {
 
@@ -63,21 +63,31 @@ public class ReadXmlFile {
 
     }
 
+    private static Document xmlDocumentReader(String filePath) {
+        Document document = null;
 
-//method 2
-    public static String getWebElementXpath(String pageName, String xpathForWebElement ) throws FrameWorkException {
-
-
-        String textContent = "";
         try {
-            // String pageName = "MyLiveScorePage";
-            //String xpathForWebElement = "btn_popUp_not_now";
-
             DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
             DocumentBuilder builder = factory.newDocumentBuilder();
-            Document document = builder.parse("src/test/resources/xpath.xml");
+            document = builder.parse(filePath);
             //extract root node from xml doc
-            Element root = document.getDocumentElement();
+        } catch (ParserConfigurationException e) {
+            e.printStackTrace();
+        } catch (SAXException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return document;
+
+    }
+
+
+    public static String getWebElementXpath(String pageName, String xpathForWebElement ) {
+        String textContent = "";
+
+        try {
+            Element root = xmlDocumentReader("src/test/resources/xpath.xml").getDocumentElement();
             NodeList nodeList = root.getChildNodes();
 
             //to iterate over parent node - pages name
@@ -114,10 +124,11 @@ public class ReadXmlFile {
 
                 }
             }
-
-        } catch (Exception e) {
-            throw new FrameWorkException("something went wrong while reading xml files");
+        } catch (DOMException e) {
+            e.printStackTrace();
         }
+
+
         return textContent;
     }
 
